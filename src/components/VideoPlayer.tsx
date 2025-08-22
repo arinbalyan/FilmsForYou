@@ -12,8 +12,6 @@ import {
   SkipForward,
   Settings,
   PictureInPicture,
-  RotateCcw,
-  ChevronDown,
   X
 } from 'lucide-react';
 import { cn } from '@/utils/cn';

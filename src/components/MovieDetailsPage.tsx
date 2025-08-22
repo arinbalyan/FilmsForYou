@@ -10,7 +10,6 @@ import {
   ArrowLeft,
   Play,
   Star,
-  Calendar,
   Clock,
   Users,
   ExternalLink,
@@ -36,7 +35,7 @@ export const MovieDetailsPage = ({ movieId }: MovieDetailsPageProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
   const [isInWatchlist, setIsInWatchlist] = useState(false);
-  const [watchProviders, setWatchProviders] = useState<any>(null);
+  const [watchProviders, setWatchProviders] = useState<{ results: Record<string, { flatrate?: unknown[]; rent?: unknown[]; buy?: unknown[] }> } | null>(null);
 
   useEffect(() => {
     const fetchMovieData = async () => {
@@ -78,17 +77,18 @@ export const MovieDetailsPage = ({ movieId }: MovieDetailsPageProps) => {
 
           // Add streaming services (Netflix, Disney+, Hulu, etc.)
           if (usProviders.flatrate) {
-            usProviders.flatrate.slice(0, 8).forEach((provider: any) => {
-              const logoUrl = provider.logo_path
-                ? `https://image.tmdb.org/t/p/w92${provider.logo_path}`
+            usProviders.flatrate.slice(0, 8).forEach((provider: unknown) => {
+              const p = provider as { provider_id: number; provider_name: string; logo_path?: string };
+              const logoUrl = p.logo_path
+                ? `https://image.tmdb.org/t/p/w92${p.logo_path}`
                 : undefined;
 
               sources.push({
-                id: `streaming-${provider.provider_id}`,
-                title: provider.provider_name,
-                url: `https://www.google.com/search?q=${encodeURIComponent(`${provider.provider_name} ${movieData.title} movie`)}`,
+                id: `streaming-${p.provider_id}`,
+                title: p.provider_name,
+                url: `https://www.google.com/search?q=${encodeURIComponent(`${p.provider_name} ${movieData.title} movie`)}`,
                 type: 'streaming',
-                description: `Stream on ${provider.provider_name}`,
+                description: `Stream on ${p.provider_name}`,
                 logoUrl: logoUrl
               });
             });
@@ -96,17 +96,18 @@ export const MovieDetailsPage = ({ movieId }: MovieDetailsPageProps) => {
 
           // Add rental services (Amazon, Apple TV, Google Play, etc.)
           if (usProviders.rent) {
-            usProviders.rent.slice(0, 6).forEach((provider: any) => {
-              const logoUrl = provider.logo_path
-                ? `https://image.tmdb.org/t/p/w92${provider.logo_path}`
+            usProviders.rent.slice(0, 6).forEach((provider: unknown) => {
+              const p = provider as { provider_id: number; provider_name: string; logo_path?: string };
+              const logoUrl = p.logo_path
+                ? `https://image.tmdb.org/t/p/w92${p.logo_path}`
                 : undefined;
 
               sources.push({
-                id: `rental-${provider.provider_id}`,
-                title: `Rent on ${provider.provider_name}`,
-                url: `https://www.google.com/search?q=${encodeURIComponent(`rent ${movieData.title} on ${provider.provider_name}`)}`,
+                id: `rental-${p.provider_id}`,
+                title: `Rent on ${p.provider_name}`,
+                url: `https://www.google.com/search?q=${encodeURIComponent(`rent ${p.provider_name} ${movieData.title} movie`)}`,
                 type: 'rental',
-                description: `Rent from ${provider.provider_name}`,
+                description: `Rent from ${p.provider_name}`,
                 logoUrl: logoUrl
               });
             });
@@ -114,17 +115,18 @@ export const MovieDetailsPage = ({ movieId }: MovieDetailsPageProps) => {
 
           // Add purchase options
           if (usProviders.buy) {
-            usProviders.buy.slice(0, 4).forEach((provider: any) => {
-              const logoUrl = provider.logo_path
-                ? `https://image.tmdb.org/t/p/w92${provider.logo_path}`
+            usProviders.buy.slice(0, 4).forEach((provider: unknown) => {
+              const p = provider as { provider_id: number; provider_name: string; logo_path?: string };
+              const logoUrl = p.logo_path
+                ? `https://image.tmdb.org/t/p/w92${p.logo_path}`
                 : undefined;
 
               sources.push({
-                id: `buy-${provider.provider_id}`,
-                title: `Buy on ${provider.provider_name}`,
-                url: `https://www.google.com/search?q=${encodeURIComponent(`buy ${movieData.title} on ${provider.provider_name}`)}`,
+                id: `buy-${p.provider_id}`,
+                title: `Buy on ${p.provider_name}`,
+                url: `https://www.google.com/search?q=${encodeURIComponent(`buy ${p.provider_name} ${movieData.title} movie`)}`,
                 type: 'buy',
-                description: `Buy from ${provider.provider_name}`,
+                description: `Buy from ${p.provider_name}`,
                 logoUrl: logoUrl
               });
             });

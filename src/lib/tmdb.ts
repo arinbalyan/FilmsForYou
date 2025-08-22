@@ -128,13 +128,13 @@ export const tmdb = {
   },
 
   // Get watch providers for a movie
-  getWatchProviders: async (movieId: number): Promise<any> => {
+  getWatchProviders: async (movieId: number): Promise<{ results: Record<string, { flatrate?: unknown[]; rent?: unknown[]; buy?: unknown[] }> }> => {
     const response = await tmdbApi.get(`/movie/${movieId}/watch/providers`);
     return response.data;
   },
 
   // Get all movie providers with logos
-  getMovieProviders: async (): Promise<any> => {
+  getMovieProviders: async (): Promise<{ results: Array<{ provider_id: number; provider_name: string; logo_path?: string }> }> => {
     const response = await tmdbApi.get(`/watch/providers/movie`);
     return response.data;
   },
