@@ -1,36 +1,246 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FilmsForYou - Movie Discovery & Information Platform
 
-## Getting Started
+**Educational Purpose Only**: This platform provides movie discovery, information, and links to legitimate external streaming services. It does not host or stream any content directly. All streaming links redirect to authorized third-party platforms where users can access content legally.
 
-First, run the development server:
+A comprehensive movie information and discovery platform built with Next.js that helps users find movies and connect them with legitimate streaming services.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![FilmsForYou Preview](https://via.placeholder.com/800x400/1a1a2e/ffffff?text=FilmsForYou+Movie+Platform)
+
+## 🌟 Features
+
+### 🎬 Core Features
+- **Massive Movie Database**: Access to thousands of movies and TV shows
+- **Advanced Search & Filtering**: Search by title, genre, language, rating, and release year
+- **Official Movie Trailers**: Direct YouTube integration for official trailers
+- **Detailed Movie Information**: Cast, crew, plot summaries, and ratings
+- **User Collections**: Save favorites and create watchlists
+- **Responsive Design**: Perfect experience on desktop, tablet, and mobile
+
+### 🎯 Streaming & OTT Integration
+- **150+ Streaming Platforms**: Netflix, Disney+, Hulu, Prime Video, HBO Max, Paramount+
+- **Official Provider Logos**: Authentic branding from all major streaming services
+- **Direct Streaming Links**: Navigate directly to content on legitimate platforms
+- **Regional Content**: Support for US and India specific content
+- **Multiple Access Options**: Streaming, rental, and purchase options
+
+### 🔍 Advanced Search Capabilities
+- **Multi-Criteria Filtering**: Combine genre, language, rating, and year filters
+- **Real-time Search**: Instant results with intelligent suggestions
+- **Smart Recommendations**: Similar movies and personalized suggestions
+- **New Arrivals**: Latest releases across all platforms
+- **Trending Content**: Popular movies and shows
+
+### 💾 User Experience
+- **Personal Collections**: Favorites and bookmarks with persistent storage
+- **Professional Video Player**: Custom controls with fullscreen support
+- **Intuitive Navigation**: Clean, modern interface with smooth animations
+- **Loading States**: Professional loading indicators and error handling
+- **Keyboard Shortcuts**: Full video player keyboard navigation
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18.0 or higher
+- npm or yarn package manager
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/films-for-you.git
+   cd films-for-you
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.local.example .env.local
+   ```
+
+   Edit `.env.local` and add your API keys:
+   ```env
+   NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key_here
+   NEXT_PUBLIC_FLIX_API_KEY=your_flix_api_key_here
+   ```
+
+4. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🛠️ API Configuration
+
+### TMDB API (Required)
+1. Visit [TMDB API Settings](https://www.themoviedb.org/settings/api)
+2. Create a free account and request an API key
+3. Add the key to your `.env.local` file
+
+### Flix OTT Details API (Recommended for enhanced features)
+1. Visit [RapidAPI Flix OTT Details](https://rapidapi.com/hmerritt/api/flix-ott-details1/)
+2. Subscribe to get your API key
+3. Add the key to your `.env.local` file
+
+## 📱 Usage Guide
+
+### Browsing Movies
+- **Landing Page**: Explore popular, trending, and upcoming movies
+- **Search Bar**: Find specific movies by title
+- **Movie Cards**: Click any movie card to view details
+
+### Movie Details Page
+- **Watch Trailer**: Official movie trailers play directly
+- **Streaming Options**: See all available platforms with logos
+- **Add to Favorites**: Heart icon saves to your collection
+- **Add to Watchlist**: Bookmark icon for later viewing
+- **Cast & Crew**: Full cast information and biographies
+
+### Personal Collections
+- **Favorites**: Access via header button with count badge
+- **Bookmarks**: Access via header button with count badge
+- **Remove Items**: Individual removal or clear all functionality
+
+### Advanced Search
+- **Filter Options**: Genre, language, rating, release year
+- **Multiple Filters**: Combine different criteria for precise results
+- **Pagination**: Navigate through large result sets
+
+## 🏗️ Project Structure
+
+```
+films-for-you/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── favorites/         # Favorites collection page
+│   │   ├── bookmarks/         # Bookmarks collection page
+│   │   ├── movie/[id]/        # Dynamic movie detail pages
+│   │   ├── layout.tsx         # Root layout
+│   │   ├── page.tsx           # Landing page
+│   │   └── globals.css        # Global styles
+│   ├── components/            # React components
+│   │   ├── MovieCard.tsx      # Movie card component
+│   │   ├── MovieDetailsPage.tsx # Movie details page
+│   │   ├── VideoPlayer.tsx    # Custom video player
+│   │   └── ...
+│   ├── lib/                   # Utility libraries
+│   │   ├── tmdb.ts           # TMDB API integration
+│   │   └── ...
+│   └── types/                # TypeScript type definitions
+│       └── movie.ts          # Movie-related types
+├── public/                   # Static assets
+├── .env.local               # Environment variables
+├── next.config.ts           # Next.js configuration
+├── tailwind.config.ts       # Tailwind CSS configuration
+└── package.json             # Dependencies and scripts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Design System
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Color Palette
+- **Primary**: Purple gradients (#8B5CF6, #A855F7)
+- **Secondary**: Blue accents (#3B82F6, #60A5FA)
+- **Accent**: Red for favorites (#EF4444, #F87171)
+- **Background**: Dark theme (#0F172A, #1E293B)
+- **Text**: Light grays (#F1F5F9, #CBD5E1)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Typography
+- **Primary Font**: Inter (sans-serif)
+- **Headings**: Bold weights with gradient effects
+- **Body Text**: Clean, readable font weights
 
-## Learn More
+### Components
+- **Cards**: Glass-morphism effect with hover animations
+- **Buttons**: Gradient backgrounds with hover states
+- **Inputs**: Custom styled form elements
+- **Modals**: Centered overlays with backdrop blur
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Environment Variables
+```env
+# Required
+NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Optional (for enhanced features)
+NEXT_PUBLIC_FLIX_API_KEY=your_flix_api_key
+```
 
-## Deploy on Vercel
+### Build Commands
+```bash
+# Development
+npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Production build
+npm run build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Start production server
+npm start
+
+# Linting
+npm run lint
+```
+
+## 🌐 Deployment
+
+### Vercel (Recommended)
+1. Connect your GitHub repository to Vercel
+2. Add environment variables in Vercel dashboard
+3. Deploy automatically on push
+
+### Manual Deployment
+```bash
+npm run build
+npm start
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/yourusername/films-for-you/issues) page
+2. Create a new issue with detailed information
+3. Include your browser, OS, and steps to reproduce
+
+## 🙏 Acknowledgments
+
+- [The Movie Database (TMDB)](https://www.themoviedb.org/) for movie data and images
+- [Flix OTT Details API](https://rapidapi.com/hmerritt/api/flix-ott-details1/) for comprehensive streaming information
+- [Next.js](https://nextjs.org/) for the React framework
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [Lucide React](https://lucide.dev/) for icons
+
+## 📈 Roadmap
+
+- [ ] User authentication and profiles
+- [ ] Social features (ratings, reviews, sharing)
+- [ ] Offline viewing capabilities
+- [ ] Advanced recommendation algorithms
+- [ ] Multi-language support
+- [ ] Mobile app development
+
+---
+
+**FilmsForYou** - Your ultimate destination for discovering and streaming movies and TV shows from around the world.
