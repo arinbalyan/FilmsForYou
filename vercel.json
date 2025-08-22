@@ -1,13 +1,9 @@
 {
+  "Version": "filmsforyou@0.0.1",
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "functions": {
-    "src/app/api/**/*.ts": {
-      "runtime": "@vercel/node"
-    }
-  },
   "images": {
     "sizes": [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     "remotePatterns": [
