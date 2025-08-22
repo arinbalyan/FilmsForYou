@@ -144,27 +144,6 @@ films-for-you/
 ├── tailwind.config.ts       # Tailwind CSS configuration
 └── package.json             # Dependencies and scripts
 ```
-
-## 🎨 Design System
-
-### Color Palette
-- **Primary**: Purple gradients (#8B5CF6, #A855F7)
-- **Secondary**: Blue accents (#3B82F6, #60A5FA)
-- **Accent**: Red for favorites (#EF4444, #F87171)
-- **Background**: Dark theme (#0F172A, #1E293B)
-- **Text**: Light grays (#F1F5F9, #CBD5E1)
-
-### Typography
-- **Primary Font**: Inter (sans-serif)
-- **Headings**: Bold weights with gradient effects
-- **Body Text**: Clean, readable font weights
-
-### Components
-- **Cards**: Glass-morphism effect with hover animations
-- **Buttons**: Gradient backgrounds with hover states
-- **Inputs**: Custom styled form elements
-- **Modals**: Centered overlays with backdrop blur
-
 ## 🔧 Configuration
 
 ### Environment Variables
@@ -176,53 +155,9 @@ NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key
 NEXT_PUBLIC_FLIX_API_KEY=your_flix_api_key
 ```
 
-### Build Commands
-```bash
-# Development
-npm run dev
-
-# Production build
-npm run build
-
-# Start production server
-npm start
-
-# Linting
-npm run lint
-```
-
-## 🌐 Deployment
-
-### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Add environment variables in Vercel dashboard
-3. Deploy automatically on push
-
-### Manual Deployment
-```bash
-npm run build
-npm start
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/yourusername/films-for-you/issues) page
-2. Create a new issue with detailed information
-3. Include your browser, OS, and steps to reproduce
 
 ## 🙏 Acknowledgments
 
@@ -232,14 +167,6 @@ If you encounter any issues or have questions:
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 - [Lucide React](https://lucide.dev/) for icons
 
-## 📈 Roadmap
-
-- [ ] User authentication and profiles
-- [ ] Social features (ratings, reviews, sharing)
-- [ ] Offline viewing capabilities
-- [ ] Advanced recommendation algorithms
-- [ ] Multi-language support
-- [ ] Mobile app development
 
 ---
 
