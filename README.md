@@ -4,7 +4,7 @@
 
 A comprehensive movie information and discovery platform built with Next.js that helps users find movies and connect them with legitimate streaming services.
 
-![FilmsForYou Preview](https://via.placeholder.com/800x400/1a1a2e/ffffff?text=FilmsForYou+Movie+Platform)
+![FilmsForYou Preview]([https://via.placeholder.com/800x400/1a1a2e/ffffff?text=FilmsForYou+Movie+Platform](https://films-for-you.vercel.app/))
 
 ## 🌟 Features
 
